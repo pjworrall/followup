@@ -1,0 +1,45 @@
+<template name="home">
+
+    <div class="container">
+
+        <h1>Follow Ups</h1>
+        <ul>
+            {{#each followups}}
+                {{> followup}}
+            {{/each}}
+        </ul>
+
+        <hr>
+
+        <h1>Contacts:</h1>
+        <form class="new-contact">
+            <label for="firstName">First name:</label>
+            <input type="text" name="firstName"/>
+            <label for="lastName">Last name:</label>
+            <input type="text" name="lastName"/>
+            <label for="firstName">eMail:</label>
+            <input type="eMail" name="eMail"/>
+            <label for="organisation">Organisation:</label>
+            <input type="text" name="organisation"/>
+            <label for="category">Category:</label>
+            <input type="text" name="category"/>
+            <input type="submit" value="+">
+        </form>
+        <hr>
+        <ul>
+            {{#each contacts}}
+                {{> contact}}
+            {{/each}}
+        </ul>
+
+        <hr>
+
+        <hr>
+        <h2>Requirements</h2>
+        <p>
+            Show only the last Followup record for each contact
+        </p>
+
+    </div>
+
+</template>

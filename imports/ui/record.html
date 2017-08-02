@@ -1,0 +1,49 @@
+<template name="record">
+
+    <div class="container">
+
+        <h1>Record Followup</h1>
+
+        {{#if Template.subscriptionsReady}}
+            {{#with contact}}
+                <h3>Contact</h3>
+                <p>{{firstName}} {{lastName}}, {{email}}, {{organisation}}</p>
+            {{/with}}
+        {{else}}
+            <p>Loading...</p>
+        {{/if}}
+
+
+        <hr>
+
+        <form class="new-record">
+            <label for="text">Text:</label>
+            <input type="text" name="text"/>
+            <label for="next">Next followup:</label>
+            <input type="text" name="next"/>
+            <input type="submit" value="+">
+        </form>
+
+        <hr>
+
+        <h1>Follow Up History</h1>
+        <ul>
+            {{#each followups}}
+                {{> catchup}}
+            {{/each}}
+        </ul>
+
+        <hr>
+
+        <h2>Requirements</h2>
+        <p>
+            Add field to record what should be discussed or delivered in followup<br>
+            Change text field to be Discussed.<br>
+            Next followup needs to be a date<br>
+            Needs a home page back button<br>
+        </p>
+
+    </div>
+
+
+</template>

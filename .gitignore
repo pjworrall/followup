@@ -1,0 +1,7 @@
+.project
+.settings
+.meteor
+.idea/*
+*-compiled.js
+*-compiled.js.map
+node_modules/
