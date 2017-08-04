@@ -25,8 +25,8 @@ Template.followup.events({
 
     'click .delete'() {
 
-        //console.log("deleting follow ups disabled");
-        Followups.remove(this._id);
+        console.log("deleting follow ups here disabled");
+        //Followups.remove(this._id);
 
     }
 

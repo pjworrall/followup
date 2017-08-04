@@ -13,7 +13,10 @@ Template.record.onRendered(function() {
    this.$('#next').datepicker({});
    this.$(".new-record").validate({
            rules: {
-               text: {
+               discussed: {
+                   required: true
+               },
+               followup: {
                    required: true
                },
                next: {
@@ -47,7 +50,8 @@ Template.record.events({
         // Get value from form element
 
         const target = event.target;
-        const text = target.text.value;
+        const followup = target.followup.value;
+        const discussed = target.discussed.value;
         const next = target.next.value;
 
         const contact = Contacts.findOne({_id: FlowRouter.getParam('_id')}) || {};
@@ -59,16 +63,25 @@ Template.record.events({
             firstName: contact.firstName,
             lastName: contact.lastName,
             organisation: contact.organisation,
-            text: text,
+            discussion: discussed,
+            followup: followup,
             next: new Date(next),
             createdAt: new Date(), // current time
         });
 
         // Clear form
 
-        target.text.value = "";
         target.next.value = "";
+        target.discussed.value = "";
+        target.followup.value = "";
 
+
+    },
+
+    'click .delete'() {
+
+        //console.log("deleting follow ups disabled");
+        Followups.remove(this._id);
 
     }
 
