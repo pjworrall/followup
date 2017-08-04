@@ -19,3 +19,11 @@ FlowRouter.route('/record/:_id', {
     name: "record"
 });
 
+FlowRouter.route('/upload', {
+    action: function() {
+        console.log("route upload");
+        BlazeLayout.render("layout", {content: 'upload'});
+    },
+    name: "upload"
+});
+

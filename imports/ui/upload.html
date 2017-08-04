@@ -1,0 +1,15 @@
+<template name="upload">
+    <h3>Bulk Contact Import</h3>
+    <h4>CSV Format</h4>
+    <p>File should be a CSV with the first row being the header. Eg:</p>
+    <code>
+        firstname,firstname,email,organisation,category<br>
+        Paul,Worrall,paul.worrall@interition.net,Interition,Software
+    </code>
+    <hr>
+    {{#unless uploading}}
+        <input type="file" name="uploadCSV">
+    {{else}}
+        <p><i class="fa fa-spin fa-refresh"></i> Uploading files...</p>
+    {{/unless}}
+</template>

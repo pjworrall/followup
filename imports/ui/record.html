@@ -4,15 +4,10 @@
 
         <h1>Record Followup</h1>
 
-        {{#if Template.subscriptionsReady}}
-            {{#with contact}}
-                <h3>Contact</h3>
-                <p>{{firstName}} {{lastName}}, {{email}}, {{organisation}}</p>
-            {{/with}}
-        {{else}}
-            <p>Loading...</p>
-        {{/if}}
-
+        {{#with contact}}
+            <h3>Contact</h3>
+            <p>{{firstname}} {{lastname}}, {{email}}, {{organisation}}</p>
+        {{/with}}
 
         <hr>
 

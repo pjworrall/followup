@@ -16,10 +16,10 @@ import './home.html';
 Template.home.onRendered(function() {
     this.$(".new-contact").validate({
             rules: {
-                firstName: {
+                firstname: {
                     required: true
                 },
-                lastName: {
+                lastname: {
                     required: true
                 },
                 organisation: {
@@ -28,7 +28,7 @@ Template.home.onRendered(function() {
                 category: {
                     required: true
                 },
-                eMail: {
+                email: {
                     required: true,
                     email: true
                 }
@@ -70,18 +70,18 @@ Template.home.events({
         // Get value from form element
 
         const target = event.target;
-        const firstName = target.firstName.value;
-        const lastName = target.lastName.value;
-        const eMail = target.eMail.value;
+        const firstname = target.firstname.value;
+        const lastname = target.lastname.value;
+        const email = target.email.value;
         const organisation = target.organisation.value;
         const category = target.category.value;
 
         // Insert a task into the collection
 
         Contacts.insert({
-            firstName: firstName,
-            lastName: lastName,
-            email: eMail,
+            firstname: firstname,
+            lastname: lastname,
+            email: email,
             organisation: organisation,
             category: category,
             createdAt: new Date(), // current time
@@ -89,9 +89,9 @@ Template.home.events({
 
         // Clear form
 
-        target.firstName.value = "";
-        target.lastName.value = "";
-        target.eMail.value = "";
+        target.firstname.value = "";
+        target.lastname.value = "";
+        target.email.value = "";
         target.organisation.value = "";
         target.category.value = "";
 

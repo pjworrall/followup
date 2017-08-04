@@ -60,10 +60,10 @@ Template.record.events({
 
         Followups.insert({
             contactId: contact._id,
-            firstName: contact.firstName,
-            lastName: contact.lastName,
+            firstname: contact.firstname,
+            lastname: contact.lastname,
             organisation: contact.organisation,
-            discussion: discussed,
+            discussed: discussed,
             followup: followup,
             next: new Date(next),
             createdAt: new Date(), // current time
