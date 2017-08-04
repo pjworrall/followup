@@ -21,11 +21,20 @@
 
         <hr>
         <h2>Contacts:</h2>
-        <ul>
+
+        <table class="table table-striped">
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>email</th>
+                <th>Organisation</th>
+                <th>Category</th>
+                <th></th>
+            </tr>
             {{#each contacts}}
                 {{> contact}}
             {{/each}}
-        </ul>
+        </table>
 
         <hr>
         <h2>New contacts:</h2>
