@@ -2,7 +2,7 @@
 
     <div class="container">
 
-        <h1>Follow Ups</h1>
+        <h2>Coming up</h2>
         <table class="table table-striped">
             <tr>
                 <th>Date</th>
@@ -20,7 +20,7 @@
 
 
         <hr>
-        <h1>Contacts:</h1>
+        <h2>Contacts:</h2>
         <ul>
             {{#each contacts}}
                 {{> contact}}
@@ -28,8 +28,8 @@
         </ul>
 
         <hr>
-
-        <form class="new-contact">
+        <h2>New contacts:</h2>
+        <form class="new-contact form-inline">
             <div class="form-group">
                 <label for="firstName">First name:</label>
                 <input type="text" class="form-control" name="firstName"/>
@@ -59,7 +59,7 @@
         </form>
 
         <hr>
-        <h2>Requirements</h2>
+        <h3>Requirements</h3>
         <p>
             Show only the last Followup record for each contact
         </p>
