@@ -3,29 +3,24 @@
     <div class="container">
 
         <h1>Follow Ups</h1>
-        <ul>
+        <table class="table table-striped">
+            <tr>
+                <th>Date</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Organisation</th>
+                <th>Text</th>
+                <th>Next</th>
+                <th></th>
+            </tr>
             {{#each followups}}
                 {{> followup}}
             {{/each}}
-        </ul>
+        </table>
+
 
         <hr>
-
         <h1>Contacts:</h1>
-        <form class="new-contact">
-            <label for="firstName">First name:</label>
-            <input type="text" name="firstName"/>
-            <label for="lastName">Last name:</label>
-            <input type="text" name="lastName"/>
-            <label for="firstName">eMail:</label>
-            <input type="eMail" name="eMail"/>
-            <label for="organisation">Organisation:</label>
-            <input type="text" name="organisation"/>
-            <label for="category">Category:</label>
-            <input type="text" name="category"/>
-            <input type="submit" value="+">
-        </form>
-        <hr>
         <ul>
             {{#each contacts}}
                 {{> contact}}
@@ -33,6 +28,35 @@
         </ul>
 
         <hr>
+
+        <form class="new-contact">
+            <div class="form-group">
+                <label for="firstName">First name:</label>
+                <input type="text" class="form-control" name="firstName"/>
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Last name:</label>
+                <input type="text" class="form-control" name="lastName"/>
+            </div>
+
+            <div class="form-group">
+                <label for="eMail">eMail:</label>
+                <input type="eMail" class="form-control" name="eMail"/>
+            </div>
+
+            <div class="form-group">
+                <label for="organisation">Organisation:</label>
+                <input type="text" class="form-control" name="organisation"/>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <input type="text" class="form-control" name="category"/>
+            </div>
+
+            <input type="submit" value="Add">
+        </form>
 
         <hr>
         <h2>Requirements</h2>

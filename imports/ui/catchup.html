@@ -1,8 +1,11 @@
 <template name="catchup">
 
-    <li>
-        <span class="text">{{dateCreated}}, {{text}}, {{next}}</span>
-    </li>
+    <tr>
+        <td><a href="{{pathFor 'record' _id=contactId}} ">{{formatCreatedDate createdAt}} </a></td>
+        <td>{{text}}</td>
+        <td>{{formatNextDate next}}</td>
+        <td><button class="delete">&times;</button></td>
+    </tr>
 
 </template>
 

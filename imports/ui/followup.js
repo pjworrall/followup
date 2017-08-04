@@ -11,12 +11,12 @@ import moment from 'moment';
 import './followup.html';
 
 Template.followup.helpers({
-    dateCreated: function () {
-
-        let createdAt = Followups.findOne({_id: FlowRouter.getParam('_id')}) || {};
-
+    formatCreatedDate: function (createdAt) {
         let m = moment(createdAt);
-
+        return m.format("ll");
+    },
+    formatNextDate: function (next) {
+        let m = moment(next);
         return m.format("ll");
     }
 });

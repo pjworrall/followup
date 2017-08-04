@@ -17,21 +17,34 @@
         <hr>
 
         <form class="new-record">
-            <label for="text">Text:</label>
-            <input type="text" name="text"/>
-            <label for="next">Next followup:</label>
-            <input type="text" name="next"/>
-            <input type="submit" value="+">
+            <div class="form-group">
+                <label for="text">Discussed:</label>
+                <input class="form-control" type="text" name="text" placeholder="Notes on conversation"/>
+            </div>
+            <div class="form-group date">
+                <label for="next">Next followup:</label>
+                <input name="next" id="next" type="text" class="form-control" placeholder="dd/MM/YYYY">
+            </div>
+
+            <button type="submit" class="btn btn-default">Add</button>
         </form>
 
         <hr>
 
         <h1>Follow Up History</h1>
-        <ul>
+
+        <table class="table table-striped">
+            <tr>
+                <th>Created</th>
+                <th>Notes</th>
+                <th>Next</th>
+                <th></th>
+            </tr>
+
             {{#each followups}}
                 {{> catchup}}
             {{/each}}
-        </ul>
+        </table>
 
         <hr>
 

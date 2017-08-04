@@ -1,11 +1,16 @@
 <template name="followup">
 
-    <li class="select">
-        <a href="{{pathFor 'record' _id=contactId}} ">
-            <span class="text">{{dateCreated}}, {{firstName}},{{lastName}}, {{organisation}}, {{text}}, {{next}}</span>
-        </a>
-        <button class="delete">&times;</button>
-    </li>
+
+    <tr>
+        <td><a href="{{pathFor 'record' _id=contactId}} ">{{formatCreatedDate createdAt}} </a></td>
+        <td>{{firstName}}</td>
+        <td>{{lastName}}</td>
+        <td>{{organisation}}</td>
+        <td>{{text}}</td>
+        <td>{{formatNextDate next}}</td>
+        <td><button class="delete">&times;</button></td>
+    </tr>
+
 
 </template>
 

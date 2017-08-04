@@ -9,13 +9,20 @@ import {Followups} from '../api/followups.js';
 import './catchup.js';
 import './record.html';
 
-Template.record.onCreated(function () {
-    let self = this;
-    self.autorun(function () {
-        let contactId = FlowRouter.getParam('_Id');
-        self.subscribe('contact', contactId);
-        self.subscribe('followups', contactId);
-    });
+Template.record.onRendered(function() {
+   this.$('#next').datepicker({});
+   this.$(".new-record").validate({
+           rules: {
+               text: {
+                   required: true
+               },
+               next: {
+                   required: true,
+                   date: true
+               }
+           }
+       }
+   )
 });
 
 Template.record.helpers({
@@ -25,7 +32,7 @@ Template.record.helpers({
     },
     followups: function () {
         let contactId = FlowRouter.getParam('_id');
-        return Followups.find({contactId: contactId},{ sort: { createdAt: -1 } }) || {};
+        return Followups.find({contactId: contactId},{ sort: { next: 1 } });
     }
 });
 
@@ -53,7 +60,7 @@ Template.record.events({
             lastName: contact.lastName,
             organisation: contact.organisation,
             text: text,
-            next: next,
+            next: new Date(next),
             createdAt: new Date(), // current time
         });
 

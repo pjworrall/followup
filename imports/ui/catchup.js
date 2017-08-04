@@ -14,22 +14,22 @@ Template.catchup.onCreated(function() {
 });
 
 Template.catchup.helpers({
-    dateCreated: function () {
-
-        let createdAt = Followups.findOne({_id: FlowRouter.getParam('_id')}) || {};
-
+    formatCreatedDate: function (createdAt) {
         let m = moment(createdAt);
-
+        return m.format("ll");
+    },
+    formatNextDate: function (next) {
+        let m = moment(next);
         return m.format("ll");
     }
 });
 
 Template.catchup.events({
 
-    'click .delete'() {
+    'click .delete'(template) {
 
-        console.log("deleting follow ups disabled");
-       // Followups.remove(this._id);
+        //console.log("deleting follow ups disabled");
+        Followups.remove(template._id);
 
     },
 

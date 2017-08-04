@@ -12,8 +12,29 @@ import './contact.js';
 import './followup.js';
 import './home.html';
 
-Template.home.onCreated(function() {
-    console.log("home template created");
+
+Template.home.onRendered(function() {
+    this.$(".new-contact").validate({
+            rules: {
+                firstName: {
+                    required: true
+                },
+                lastName: {
+                    required: true
+                },
+                organisation: {
+                    required: true
+                },
+                category: {
+                    required: true
+                },
+                eMail: {
+                    required: true,
+                    email: true
+                }
+            }
+        }
+    )
 });
 
 
@@ -26,7 +47,12 @@ Template.home.helpers({
     },
     followups() {
 
-        return Followups.find({}, { sort: { createdAt: -1 } });
+        // only want last followup for each contact
+        // group by contact
+        // sort by next date latest
+        // take latest only
+
+        return Followups.find({}, { sort: { next: 1 } });
 
     }
 
