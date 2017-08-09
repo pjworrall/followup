@@ -1,4 +1,4 @@
-#Followup!
+#Followup
 
 ##Development team onboarding project
 
@@ -57,6 +57,12 @@ Meteor npm install
 ### Install a development environment
 
 You can use anything you want. We use JetBrains WebStorm (https://www.jetbrains.com/webstorm/) and sometimes Atom (https://atom.io/) .
+
+## Running
+
+```meteor run```
+
+Then address your browser to http://localhost:3000
 
 ## Contributing
 
